@@ -9,7 +9,7 @@ def hello_main_page():
 
 @app.route("/cats/")
 def hello_cats():
-    return "cats"
+    return "catsdshjjefjol"
 
 
 
