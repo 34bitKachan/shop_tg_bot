@@ -19,7 +19,7 @@ def registration():
     <input type='text' name='answer'>
     <input type='submit' value = 'тык'>
     </form>
-    """ + request.args.get("name", 'noname') + request.args.get("answer", '')
+    """ + request.args.get("name", 'noname') + request.args.get("answer", '') + "1"
 
 if __name__ == "__main__":
     app.run(debug=True, port=15000)
