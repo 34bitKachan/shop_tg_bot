@@ -1,25 +1,19 @@
-from flask import Flask, request
+from aiogram import Bot, Dispatcher
+from aiogram.filters.command import CommandStart
+from aiogram.types import Message
 
-app = Flask(__name__)
+import asyncio
 
+token = "7934857363:AAHwwYf-oSN2j1Igjl9IazVabnBCz4hJi0U"
+bot = Bot(token=token)
+dp = Dispatcher()
 
-@app.route("/")
-def hello_main_page():
-    return '<a href="/cats/">Коты и кошечки</a>'
+@dp.message(CommandStart)
+async def hello_bot(mes: Message):
+    await mes.answer("Hello World!")
 
-@app.route("/cats/")
-def hello_cats():
-    return "catsdshjjefjol"
-
-@app.route("/registry")
-def registration():
-    return """Регистрация:<br>
-    <form>
-    <input type='text' name='name'>
-    <input type='text' name='answer'>
-    <input type='submit' value = 'тык'>
-    </form>
-    """ + request.args.get("name", 'noname') + request.args.get("answer", '') + "1"
+async def start_bot():
+    await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=15000)
+    asyncio.run(start_bot())
