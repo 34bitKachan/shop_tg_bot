@@ -3,3 +3,5 @@
 .venv
 site
 scr/configs
+database/*.db
+
