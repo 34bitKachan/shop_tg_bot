@@ -2,4 +2,7 @@
 .vscode
 .venv
 site
-scr/configs
+scr/configs/.env
+database/*.db
+__pycache__
+
