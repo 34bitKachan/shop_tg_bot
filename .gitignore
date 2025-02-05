@@ -4,4 +4,4 @@
 site
 scr/configs
 database/*.db
-
+__pycache__
